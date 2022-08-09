@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+   
     var body: some View {
         
         
@@ -15,25 +16,26 @@ struct ContentView: View {
                     HStack (spacing: 0){
                         
                         Rectangle().fill(Color.red)
-                           
-                            .frame(width: 100, height: 80)
-                            
+                                                       
                         Rectangle().fill(Color.blue)
-                            .frame(width: 100, height: 80)
+                           
                         
                         Rectangle().fill(Color.yellow)
-                            .frame(width: 100, height: 80)
+                         
                         
                         
                     }
                     
                    
-                    
+                // Peek the location of the next tile to turn.
+                // If X go larger, Y not change: go right
+                // If X go smaller, Y not change: go left
+                // Else: go down
                 GeometryReader{ geo in
                     Image("dinosaur")
                         .resizable()
                         .frame(width: 80, height: 80)
-                        .position(x: geo.frame(in: .local).minX, y: geo.frame(in: .local).minY)
+                        .position(x: geo.frame(in: .local).minX + 50 * 5, y: geo.frame(in: .local).minY + 40)
                         
                 }
                 
