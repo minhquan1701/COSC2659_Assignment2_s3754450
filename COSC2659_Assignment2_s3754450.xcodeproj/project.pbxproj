@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		47A471A828B0BA1B00540AFE /* ModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A471A728B0BA1B00540AFE /* ModalView.swift */; };
+		47A471B028B0DCBB00540AFE /* Teko-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 47A471AA28B0DCBB00540AFE /* Teko-Bold.ttf */; };
+		47A471B128B0DCBB00540AFE /* Teko-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 47A471AB28B0DCBB00540AFE /* Teko-Medium.ttf */; };
+		47A471B228B0DCBB00540AFE /* Teko-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 47A471AC28B0DCBB00540AFE /* Teko-SemiBold.ttf */; };
+		47A471B328B0DCBB00540AFE /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = 47A471AD28B0DCBB00540AFE /* OFL.txt */; };
+		47A471B428B0DCBB00540AFE /* Teko-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 47A471AE28B0DCBB00540AFE /* Teko-Regular.ttf */; };
+		47A471B528B0DCBB00540AFE /* Teko-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 47A471AF28B0DCBB00540AFE /* Teko-Light.ttf */; };
+		47A471B928B0E64300540AFE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A471B828B0E64300540AFE /* User.swift */; };
 		47AD32FC289E17E900AD1A40 /* COSC2659_Assignment2_s3754450App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AD32FB289E17E900AD1A40 /* COSC2659_Assignment2_s3754450App.swift */; };
 		47AD32FE289E17E900AD1A40 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AD32FD289E17E900AD1A40 /* ContentView.swift */; };
 		47AD3300289E17EA00AD1A40 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47AD32FF289E17EA00AD1A40 /* Assets.xcassets */; };
@@ -35,6 +43,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		47A471A728B0BA1B00540AFE /* ModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalView.swift; sourceTree = "<group>"; };
+		47A471AA28B0DCBB00540AFE /* Teko-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Teko-Bold.ttf"; sourceTree = "<group>"; };
+		47A471AB28B0DCBB00540AFE /* Teko-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Teko-Medium.ttf"; sourceTree = "<group>"; };
+		47A471AC28B0DCBB00540AFE /* Teko-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Teko-SemiBold.ttf"; sourceTree = "<group>"; };
+		47A471AD28B0DCBB00540AFE /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
+		47A471AE28B0DCBB00540AFE /* Teko-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Teko-Regular.ttf"; sourceTree = "<group>"; };
+		47A471AF28B0DCBB00540AFE /* Teko-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Teko-Light.ttf"; sourceTree = "<group>"; };
+		47A471B628B0DEA200540AFE /* COSC2659-Assignment2-s3754450-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "COSC2659-Assignment2-s3754450-Info.plist"; sourceTree = SOURCE_ROOT; };
+		47A471B828B0E64300540AFE /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		47AD32F8289E17E900AD1A40 /* COSC2659_Assignment2_s3754450.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = COSC2659_Assignment2_s3754450.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		47AD32FB289E17E900AD1A40 /* COSC2659_Assignment2_s3754450App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = COSC2659_Assignment2_s3754450App.swift; sourceTree = "<group>"; };
 		47AD32FD289E17E900AD1A40 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -73,6 +90,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		47A471A628B0B9F500540AFE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				47A471A728B0BA1B00540AFE /* ModalView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		47A471A928B0DCBB00540AFE /* Teko */ = {
+			isa = PBXGroup;
+			children = (
+				47A471AA28B0DCBB00540AFE /* Teko-Bold.ttf */,
+				47A471AB28B0DCBB00540AFE /* Teko-Medium.ttf */,
+				47A471AC28B0DCBB00540AFE /* Teko-SemiBold.ttf */,
+				47A471AD28B0DCBB00540AFE /* OFL.txt */,
+				47A471AE28B0DCBB00540AFE /* Teko-Regular.ttf */,
+				47A471AF28B0DCBB00540AFE /* Teko-Light.ttf */,
+			);
+			path = Teko;
+			sourceTree = "<group>";
+		};
+		47A471B728B0E61600540AFE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				47A471B828B0E64300540AFE /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		47AD32EF289E17E900AD1A40 = {
 			isa = PBXGroup;
 			children = (
@@ -96,9 +142,13 @@
 		47AD32FA289E17E900AD1A40 /* COSC2659_Assignment2_s3754450 */ = {
 			isa = PBXGroup;
 			children = (
+				47A471B628B0DEA200540AFE /* COSC2659-Assignment2-s3754450-Info.plist */,
+				47A471A928B0DCBB00540AFE /* Teko */,
 				47AFC3C028B0958E00D6422A /* ViewModel */,
 				47AD32FB289E17E900AD1A40 /* COSC2659_Assignment2_s3754450App.swift */,
 				47AD32FD289E17E900AD1A40 /* ContentView.swift */,
+				47A471B728B0E61600540AFE /* Model */,
+				47A471A628B0B9F500540AFE /* View */,
 				47AD32FF289E17EA00AD1A40 /* Assets.xcassets */,
 				47AD3301289E17EA00AD1A40 /* Preview Content */,
 			);
@@ -242,7 +292,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47A471B428B0DCBB00540AFE /* Teko-Regular.ttf in Resources */,
+				47A471B328B0DCBB00540AFE /* OFL.txt in Resources */,
+				47A471B528B0DCBB00540AFE /* Teko-Light.ttf in Resources */,
+				47A471B128B0DCBB00540AFE /* Teko-Medium.ttf in Resources */,
+				47A471B028B0DCBB00540AFE /* Teko-Bold.ttf in Resources */,
 				47AD3303289E17EA00AD1A40 /* Preview Assets.xcassets in Resources */,
+				47A471B228B0DCBB00540AFE /* Teko-SemiBold.ttf in Resources */,
 				47AD3300289E17EA00AD1A40 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -270,6 +326,8 @@
 			files = (
 				47AD32FE289E17E900AD1A40 /* ContentView.swift in Sources */,
 				47AFC3C228B098BE00D6422A /* MainGameViewModel.swift in Sources */,
+				47A471A828B0BA1B00540AFE /* ModalView.swift in Sources */,
+				47A471B928B0E64300540AFE /* User.swift in Sources */,
 				47AD32FC289E17E900AD1A40 /* COSC2659_Assignment2_s3754450App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -431,6 +489,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"COSC2659_Assignment2_s3754450/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "COSC2659-Assignment2-s3754450-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -459,6 +518,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"COSC2659_Assignment2_s3754450/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "COSC2659-Assignment2-s3754450-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

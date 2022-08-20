@@ -9,10 +9,10 @@ import SwiftUI
 
 struct ContentView: View {
 
-    @StateObject var viewModel = MainGameViewModel()
+//    @ObservedObject var viewModel = MainGameViewModel()
+    
+    @EnvironmentObject var viewModel: MainGameViewModel
     var body: some View {
-        
-        
         ZStack {
             ZStack {
                 Image("main-game-bg")
@@ -38,36 +38,32 @@ struct ContentView: View {
                         //TODO: point component
                         HStack (spacing: 4) {
                             Image(systemName:"star.circle")
-                                .font(.system(size: 32))
-                            Text("\(viewModel.currPoint)")
                                 .font(.system(size: 24))
-                                .fontWeight(.semibold)
+                            Text("\(viewModel.currPoint)")
+                                .font(.custom("Teko-SemiBold" ,size: 24))
+//                                .fontWeight(.semibold)
                                 
                         }
                         
                         
                         Spacer()
                         Text("00:59")
-                            .font(.system(size: 40))
-                            .fontWeight(.bold)
+                            .font(.custom("Teko-Bold" ,size: 40))
+//                            .fontWeight(.bold)
                         
                         Spacer()
                         
                         Text("Quan")
-                            .font(.system(size: 24))
-                            .fontWeight(.semibold)
+                            .font(.custom("Teko-SemiBold" ,size: 24))
+//                            .fontWeight(.semibold)
 
                             
                     }
                     .padding(.horizontal, 16)
                     .padding(.bottom, 32)
                     .frame(maxWidth: 375)
-                    
-                
-                    
                     .foregroundColor(Color("primary-100"))
-                
-                
+
                 
                 ZStack {
                         Image("map")
@@ -90,8 +86,9 @@ struct ContentView: View {
                
                 .frame(width: 288, height: 504)
             
-                VStack {
+                VStack (spacing: 4) {
                     Text("Tap the dice to roll")
+                        .font(.custom("Teko-Regular", size: 20))
                         .foregroundColor(Color("primary-100"))
                     Image("dice-\(viewModel.diceDisplay)")
                         .resizable()
@@ -107,9 +104,13 @@ struct ContentView: View {
                 .padding(.top, 32)
             
             }
+            if(viewModel.isWon){
+                ModalView()
+            }
+           
+            
         }
         
-            
         
     }
 }
@@ -117,5 +118,6 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .environmentObject(MainGameViewModel())
     }
 }

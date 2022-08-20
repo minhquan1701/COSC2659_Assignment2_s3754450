@@ -8,6 +8,8 @@
 import Foundation
 
 final class MainGameViewModel : ObservableObject{
+//    @AppStorage("user") var user = User()
+    
     @Published var offsetX = 0
     @Published var offsetY = 0
     @Published var  currentPosition = 0
@@ -17,7 +19,7 @@ final class MainGameViewModel : ObservableObject{
     
     @Published var  currPoint = 0
     
-    
+    @Published var  isWon = false
     
     func updatePoint(){
         if (self.currentPosition == 1){
@@ -40,8 +42,21 @@ final class MainGameViewModel : ObservableObject{
         }
     }
     
+    func initGame(){
+        self.offsetX = 0
+        self.offsetY = 0
+        self.currentPosition = 0
+        self.diceRolled = 0
+        self.currPoint = 0
+        self.isWon = false
+    }
+    
+//    func saveUserScore (){
+//
+//    }
     
     func rollDice(){
+       
         var rollCount = 0
         Timer.scheduledTimer(withTimeInterval: 0.3, repeats: true){ t in
             rollCount += 1
@@ -69,8 +84,13 @@ final class MainGameViewModel : ObservableObject{
                     self.currentPosition += 1
                     if (count == self.diceRolled){
                         self.updatePoint()
+                    
                         t.invalidate()
                     }
+                }else if (self.currentPosition == 9){
+                    self.isWon = true
+                    t.invalidate()
+                    
                 }
             }
          })

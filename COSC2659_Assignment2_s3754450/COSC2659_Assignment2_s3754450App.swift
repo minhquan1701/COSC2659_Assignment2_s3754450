@@ -9,9 +9,10 @@ import SwiftUI
 
 @main
 struct COSC2659_Assignment2_s3754450App: App {
+    @StateObject var mainGameViewModel = MainGameViewModel()
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView().environmentObject(mainGameViewModel)
         }
     }
 }
