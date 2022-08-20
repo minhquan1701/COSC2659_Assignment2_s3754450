@@ -8,118 +8,105 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var offsetX = 0
-    @State var offsetY = 0
-    
-    @State var  currentPosition = 0
-    @State var  diceRolled = 0
-    
+
+    @StateObject var viewModel = MainGameViewModel()
     var body: some View {
         
         
-        VStack {
-            Text("\(diceRolled)")
+        ZStack {
             ZStack {
-                VStack (spacing: 0) {
-                    HStack (spacing: 0){
+                Image("main-game-bg")
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                .ignoresSafeArea()
+                
+                LinearGradient(
+                        gradient: Gradient(stops: [
+                            .init(color: .black, location: 0),
+                            .init(color: .black.opacity(0), location: 1)
+                        ]),
+                        startPoint: .bottom,
+                        endPoint: .top
+                )
+                .ignoresSafeArea()
+            }
+            
+            
+            VStack {
+           
+                    HStack  {
+                        //TODO: point component
+                        HStack (spacing: 4) {
+                            Image(systemName:"star.circle")
+                                .font(.system(size: 32))
+                            Text("\(viewModel.currPoint)")
+                                .font(.system(size: 24))
+                                .fontWeight(.semibold)
                                 
-                                Rectangle().fill(Color.green)
-                                                               
-                                Rectangle().fill(Color.black)
-                                   
-                                Rectangle().fill(Color.orange)
-                    }
-                    HStack (spacing: 0){
-                                
-                                Rectangle().fill(Color.red)
-                                                               
-                                Rectangle().fill(Color.blue)
-                                   
-                                Rectangle().fill(Color.yellow)
-                    }
-                    HStack (spacing: 0){
-                                
-                                Rectangle().fill(Color.green)
-                                                               
-                                Rectangle().fill(Color.black)
-                                   
-                                Rectangle().fill(Color.orange)
-                    }
-                    HStack (spacing: 0){
-                                
-                                Rectangle().fill(Color.pink)
-                                                               
-                                Rectangle().fill(Color.purple)
-                                   
-                                Rectangle().fill(Color.gray)
-                    }
-                    HStack (spacing: 0){
-                                
-                                Rectangle().fill(Color.red)
-                                                               
-                                Rectangle().fill(Color.blue)
-                                   
-                                Rectangle().fill(Color.yellow)
-                    }
-
-
-                }
+                        }
                         
-                       
-                    // Peek the location of the next tile to turn.
-                    // If X go larger, Y not change: go right
-                    // If X go smaller, Y not change: go left
-                    // Else: go down
-                    GeometryReader{ geo in
-                        Image("dinosaur")
-                            .resizable()
-                            .frame(width: 80, height: 80)
-                            .position(x: geo.frame(in: .local).minX + 50 + CGFloat(offsetX), y: geo.frame(in: .local).minY + 50 + CGFloat( offsetY))
+                        
+                        Spacer()
+                        Text("00:59")
+                            .font(.system(size: 40))
+                            .fontWeight(.bold)
+                        
+                        Spacer()
+                        
+                        Text("Quan")
+                            .font(.system(size: 24))
+                            .fontWeight(.semibold)
+
                             
                     }
+                    .padding(.horizontal, 16)
+                    .padding(.bottom, 32)
+                    .frame(maxWidth: 375)
                     
-                }
-            .frame(width: 300, height: 500)
-        
-            Button("roll", action: {
-                withAnimation(.easeIn){
-                  diceRolled = Int.random(in: 1...6)
-                    let _ = print("hi!")
-
-                  var count = 0
-                  Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true){ t in
-                         if (currentPosition == 6){
-                           self.offsetY = 0
-                           self.offsetX = 0
-                           self.currentPosition = 0
-                           t.invalidate()
-                         }else{
-                             
-                             if (currentPosition < 2 || currentPosition >= 4 ){
-                                 self.offsetY += 100
-                                 
-                             }
-                             else{
-                                 self.offsetX += 100
-                             }
-                             count+=1
-                             currentPosition += 1
-                             if (count == diceRolled){
-                                 t.invalidate()
-                             }
-                         }
-                        
-                      
+                
+                    
+                    .foregroundColor(Color("primary-100"))
+                
+                
+                
+                ZStack {
+                        Image("map")
+                        .resizable()
+                        .scaledToFill()
+                           
+                        // Peek the location of the next tile to turn.
+                        GeometryReader{ geo in
+                            Image("dinosaur")
+                                .resizable()
+                                .frame(width: 72, height: 72)
+                                .position(x: geo.frame(in: .local).minX + 36 + CGFloat(viewModel.offsetX), y: geo.frame(in: .local).minY + 36 + CGFloat( viewModel.offsetY))
+                                .animation(.easeInOut, value: viewModel.offsetX)
+                                .animation(.easeInOut, value: viewModel.offsetY)
+                                
+                                
+                        }
                         
                     }
+               
+                .frame(width: 288, height: 504)
+            
+                VStack {
+                    Text("Tap the dice to roll")
+                        .foregroundColor(Color("primary-100"))
+                    Image("dice-\(viewModel.diceDisplay)")
+                        .resizable()
+                        .frame(width: 87, height: 87)
+                        .onTapGesture {
+                            withAnimation(.easeIn){
+                                viewModel.rollDice()
+                            }
+                        }
+                        
                     
                 }
-
-//                withAnimation(Animation.linear.delay(0.5)){
-//                    self.offsetX = 1
-//                }
-            })
-        
+                .padding(.top, 32)
+            
+            }
         }
         
             
