@@ -6,10 +6,14 @@
 //
 
 import Foundation
+import SwiftUI
 
-final class MainGameViewModel : ObservableObject{
-//    @AppStorage("user") var user = User()
+
+
+class MainGameViewModel : ObservableObject{
     
+    
+
     @Published var offsetX = 0
     @Published var offsetY = 0
     @Published var  currentPosition = 0
@@ -20,6 +24,10 @@ final class MainGameViewModel : ObservableObject{
     @Published var  currPoint = 0
     
     @Published var  isWon = false
+    
+    //An array state to store the 5 latest high scores
+    @Published var  listHighScores = []
+
     
     func updatePoint(){
         if (self.currentPosition == 1){
@@ -51,9 +59,14 @@ final class MainGameViewModel : ObservableObject{
         self.isWon = false
     }
     
-//    func saveUserScore (){
-//
+//    func initHighScroreList (highScoreVars : [Int]){
+//        for i in 0...4 {
+//            if (self.currPoint > highScoreVars[i]){
+//                highScoreVars[i] = self.currPoint
+//            }
+//        }
 //    }
+    
     
     func rollDice(){
        

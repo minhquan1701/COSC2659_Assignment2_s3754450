@@ -30,7 +30,7 @@ struct StartMenuView: View {
                 }
                 
                 
-                VStack {
+                VStack (spacing: 24) {
                
                     VStack (spacing: -48) {
                         Text("JURASSIC")
@@ -41,9 +41,16 @@ struct StartMenuView: View {
                             .foregroundColor(Color.white)
                     }
                     
-                    VStack{
+                    VStack(spacing: 32){
                         NavigationLink(destination: MainGameView(), isActive: $isLinkActive){
                             ButtonView(clickHandler: {self.isLinkActive = true}, buttonTitle: "💥 Let’s Play")
+                        }
+                        
+                        NavigationLink(destination: MainGameView(), isActive: $isLinkActive){
+                            ButtonView(clickHandler: {self.isLinkActive = true}, type : "secondary", buttonTitle: "📖 Instruction")
+                        }
+                        NavigationLink(destination: MainGameView(), isActive: $isLinkActive){
+                            ButtonView(clickHandler: {self.isLinkActive = true}, type : "secondary", buttonTitle: "🏆 Leaderboard")
                         }
                 
 

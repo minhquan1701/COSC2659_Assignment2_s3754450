@@ -9,9 +9,20 @@ import SwiftUI
     
 struct ModalView: View {
     @EnvironmentObject var viewModel: MainGameViewModel
+    
+    
+    
+    //Persist high scores of the 5 latest turns
+    @AppStorage("savedHighScore1") var savedHighScore1 : Int = 0
+    @AppStorage("savedHighScore2") var savedHighScore2 : Int = 0
+    @AppStorage("savedHighScore3") var savedHighScore3 : Int = 0
+    @AppStorage("savedHighScore4") var savedHighScore4 : Int = 0
+    @AppStorage("savedHighScore5") var savedHighScore5 : Int = 0
+    
+   
+    
+    
     var body: some View {
-        
-            
             ZStack {
                 VStack{
                     
@@ -28,6 +39,12 @@ struct ModalView: View {
                     
                     HStack(spacing: 120){
                         Button("Replay", action: {
+//                            for i in 0...4 {
+//                                if (viewModel.currPoint > highScoreList[i]){
+//                                    highScoreList[i] = viewModel.currPoint
+//                                }
+//                            }
+//                            
                             viewModel.initGame()
                         })
                         Button("Back to Menu", action: {
@@ -37,7 +54,7 @@ struct ModalView: View {
                     .padding(.top, 10)
                 }
                 .padding(.vertical, 28)
-                .frame(maxWidth: 370)
+//                .frame(maxWidth: 370)
                 .background(Color("primary-100"))
             .cornerRadius(10)
             }

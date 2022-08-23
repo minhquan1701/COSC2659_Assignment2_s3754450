@@ -9,6 +9,9 @@ import SwiftUI
 
 struct MainGameView: View {
     @EnvironmentObject var viewModel: MainGameViewModel
+    
+    @AppStorage("savedHighScore1") var highestScore : Int = 0
+    
     var body: some View {
         ZStack {
             ZStack {
@@ -51,7 +54,7 @@ struct MainGameView: View {
                         
                         Spacer()
                         
-                        Text("Quan")
+                        Text(String(highestScore))
                             .font(.custom("Teko-SemiBold" ,size: 24))
 //                            .fontWeight(.semibold)
 
