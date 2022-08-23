@@ -36,27 +36,25 @@ struct MainGameView: View {
             VStack {
            
                     HStack  {
-                        //TODO: point component
                         HStack (spacing: 4) {
                             Image(systemName:"star.circle")
                                 .font(.system(size: 24))
                             Text("\(viewModel.currPoint)")
                                 .font(.custom("Teko-SemiBold" ,size: 24))
-//                                .fontWeight(.semibold)
-                                
+
                         }
                         
-                        
-                        Spacer()
-                        Text("00:59")
-                            .font(.custom("Teko-Bold" ,size: 40))
-//                            .fontWeight(.bold)
-                        
                         Spacer()
                         
-                        Text(String(highestScore))
-                            .font(.custom("Teko-SemiBold" ,size: 24))
-//                            .fontWeight(.semibold)
+                        
+                        HStack (alignment: .center, spacing: 4) {
+                            Image("high-score")
+                                .resizable()
+                                .frame(width: 26, height: 22.4)
+                            Text(String(highestScore))
+                                .font(.custom("Teko-SemiBold" ,size: 24))
+                        }
+
 
                             
                     }

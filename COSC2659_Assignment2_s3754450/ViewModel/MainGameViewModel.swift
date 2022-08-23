@@ -71,7 +71,7 @@ class MainGameViewModel : ObservableObject{
     func rollDice(){
        
         var rollCount = 0
-        Timer.scheduledTimer(withTimeInterval: 0.3, repeats: true){ t in
+        Timer.scheduledTimer(withTimeInterval: 0.15, repeats: true){ t in
             rollCount += 1
             self.diceDisplay = Int.random(in: 1...6)
             
@@ -84,10 +84,15 @@ class MainGameViewModel : ObservableObject{
         }
         
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5, execute: {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.9, execute: {
             var count = 0
             Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true){ t in
-                if (self.currentPosition < 9){
+                if (self.currentPosition == 9){
+                    self.updatePoint()
+                    self.isWon = true
+                    t.invalidate()
+                    
+                } else {
                     if (self.currentPosition < 3 || self.currentPosition >= 6 ){
                         self.offsetY += 72
                     } else{
@@ -95,16 +100,15 @@ class MainGameViewModel : ObservableObject{
                     }
                     count+=1
                     self.currentPosition += 1
-                    if (count == self.diceRolled){
+                    if (count == self.diceRolled && self.currentPosition < 9){
                         self.updatePoint()
                     
                         t.invalidate()
                     }
-                }else if (self.currentPosition == 9){
-                    self.isWon = true
-                    t.invalidate()
-                    
                 }
+                
+                
+                
             }
          })
     }

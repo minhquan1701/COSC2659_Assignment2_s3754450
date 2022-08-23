@@ -26,6 +26,7 @@
 		47AD3317289E17EB00AD1A40 /* COSC2659_Assignment2_s3754450UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AD3316289E17EB00AD1A40 /* COSC2659_Assignment2_s3754450UITests.swift */; };
 		47AD3319289E17EB00AD1A40 /* COSC2659_Assignment2_s3754450UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AD3318289E17EB00AD1A40 /* COSC2659_Assignment2_s3754450UITestsLaunchTests.swift */; };
 		47AFC3C228B098BE00D6422A /* MainGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AFC3C128B098BE00D6422A /* MainGameViewModel.swift */; };
+		47CD515528B513C200DF8F67 /* LeaderBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CD515428B513C200DF8F67 /* LeaderBoardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		47AD3316289E17EB00AD1A40 /* COSC2659_Assignment2_s3754450UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = COSC2659_Assignment2_s3754450UITests.swift; sourceTree = "<group>"; };
 		47AD3318289E17EB00AD1A40 /* COSC2659_Assignment2_s3754450UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = COSC2659_Assignment2_s3754450UITestsLaunchTests.swift; sourceTree = "<group>"; };
 		47AFC3C128B098BE00D6422A /* MainGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainGameViewModel.swift; sourceTree = "<group>"; };
+		47CD515428B513C200DF8F67 /* LeaderBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderBoardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 				47A471A728B0BA1B00540AFE /* ModalView.swift */,
 				475E4C2028B3B2C100CEA8A8 /* StartMenuView.swift */,
 				475E4C2528B3C00800CEA8A8 /* MainGameView.swift */,
+				47CD515428B513C200DF8F67 /* LeaderBoardView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -345,6 +348,7 @@
 				47AFC3C228B098BE00D6422A /* MainGameViewModel.swift in Sources */,
 				475E4C2128B3B2C100CEA8A8 /* StartMenuView.swift in Sources */,
 				47A471A828B0BA1B00540AFE /* ModalView.swift in Sources */,
+				47CD515528B513C200DF8F67 /* LeaderBoardView.swift in Sources */,
 				47A471B928B0E64300540AFE /* User.swift in Sources */,
 				47AD32FC289E17E900AD1A40 /* COSC2659_Assignment2_s3754450App.swift in Sources */,
 				475E4C2428B3B66200CEA8A8 /* ButtonView.swift in Sources */,

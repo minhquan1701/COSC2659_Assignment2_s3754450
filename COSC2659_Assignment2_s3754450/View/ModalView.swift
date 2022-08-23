@@ -39,12 +39,19 @@ struct ModalView: View {
                     
                     HStack(spacing: 120){
                         Button("Replay", action: {
-//                            for i in 0...4 {
-//                                if (viewModel.currPoint > highScoreList[i]){
-//                                    highScoreList[i] = viewModel.currPoint
-//                                }
-//                            }
-//                            
+                            
+                            if (viewModel.currPoint > savedHighScore1){
+                                savedHighScore1 = viewModel.currPoint
+                            } else if (viewModel.currPoint > savedHighScore2){
+                                savedHighScore2 = viewModel.currPoint
+                            } else if (viewModel.currPoint > savedHighScore3){
+                                savedHighScore3 = viewModel.currPoint
+                            } else if (viewModel.currPoint > savedHighScore4){
+                                savedHighScore4 = viewModel.currPoint
+                            }else if (viewModel.currPoint > savedHighScore5){
+                                savedHighScore5 = viewModel.currPoint
+                            }
+
                             viewModel.initGame()
                         })
                         Button("Back to Menu", action: {
@@ -54,7 +61,7 @@ struct ModalView: View {
                     .padding(.top, 10)
                 }
                 .padding(.vertical, 28)
-//                .frame(maxWidth: 370)
+                .frame(maxWidth: 350)
                 .background(Color("primary-100"))
             .cornerRadius(10)
             }
