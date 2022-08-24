@@ -8,14 +8,21 @@
 import SwiftUI
 
 struct LeaderBoardView: View {
-    @State var isMainGameLinkActive = false
-    @State var isStartMenuActive = false
+    @EnvironmentObject var viewModel: MainGameViewModel
     
     @AppStorage("savedHighScore1") var savedHighScore1 : Int = 0
     @AppStorage("savedHighScore2") var savedHighScore2 : Int = 0
     @AppStorage("savedHighScore3") var savedHighScore3 : Int = 0
     @AppStorage("savedHighScore4") var savedHighScore4 : Int = 0
     @AppStorage("savedHighScore5") var savedHighScore5 : Int = 0
+    
+    var ButtonBack : some View {
+        ButtonView(clickHandler: {viewModel.pageView = "start"}, type: "secondary", buttonTitle: "Back To Menu")
+    }
+    var PlayBack : some View {
+        ButtonView(clickHandler: {viewModel.pageView = "main"}, type: "primary", buttonTitle: "Play Now")
+    }
+    
     
     var body: some View {
         NavigationView {
@@ -46,30 +53,34 @@ struct LeaderBoardView: View {
                     
                     VStack{
                         Text(String(savedHighScore1))
+                            .font(.custom("Teko-Bold", size: 32))
+                            .foregroundColor(Color("primary-300"))
+                        Text(String(savedHighScore2))
+                            .font(.custom("Teko-Bold", size: 32))
+                            .foregroundColor(Color("primary-300"))
+                        Text(String(savedHighScore3))
+                            .font(.custom("Teko-Bold", size: 32))
+                            .foregroundColor(Color("primary-300"))
+                        Text(String(savedHighScore4))
+                            .font(.custom("Teko-Bold", size: 32))
+                            .foregroundColor(Color("primary-300"))
+                        Text(String(savedHighScore5))
+                            .font(.custom("Teko-Bold", size: 32))
+                            .foregroundColor(Color("primary-300"))
                         
                     }
-                    
-                    
-                    VStack(spacing: 32){
-                        NavigationLink(destination: StartMenuView(), isActive: $isStartMenuActive){
-                            ButtonView(clickHandler: {self.isStartMenuActive = true}, type: "secondary", buttonTitle: "Back To Menu")
-                        }
+                    .padding(.bottom, 64)
                         
-//                        NavigationLink(destination: MainGameView(), isActive: $isInstructionLinkActive){
-//                            ButtonView(clickHandler: {self.isInstructionLinkActive = true}, type : "secondary", buttonTitle: "📖 Instruction")
-//                        }
-//                        NavigationLink(destination: MainGameView(), isActive: $isLeaderboardLinkActive){
-//                            ButtonView(clickHandler: {self.isLeaderboardLinkActive = true}, type : "secondary", buttonTitle: "🏆 Leaderboard")
-//                        }
-                
-
+                    VStack (spacing: 32){
+                        PlayBack
+                        ButtonBack
                     }
-
+                        
                 }
 
             }
-            .navigationBarTitle("")
-            .navigationBarHidden(true)
+
+
         }
     }
 }

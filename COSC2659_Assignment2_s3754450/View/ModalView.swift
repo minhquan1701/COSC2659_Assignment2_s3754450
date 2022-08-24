@@ -19,8 +19,6 @@ struct ModalView: View {
     @AppStorage("savedHighScore4") var savedHighScore4 : Int = 0
     @AppStorage("savedHighScore5") var savedHighScore5 : Int = 0
     
-   
-    
     
     var body: some View {
             ZStack {
@@ -54,9 +52,15 @@ struct ModalView: View {
 
                             viewModel.initGame()
                         })
+                        .font(.custom("Teko-Medium", size: 24))
+                        .foregroundColor(Color("primary-500"))
+                        
                         Button("Back to Menu", action: {
-                            
+                            viewModel.initGame()
+                            viewModel.pageView = "start"
                         })
+                        .font(.custom("Teko-Medium", size: 24))
+                        .foregroundColor(Color("primary-800"))
                     }
                     .padding(.top, 10)
                 }

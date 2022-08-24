@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct StartMenuView: View {
+    @EnvironmentObject var viewModel: MainGameViewModel
+    
     @State var isMainGameLinkActive = false
     @State var isInstructionLinkActive = false
     @State var isLeaderboardLinkActive = false
@@ -45,14 +47,15 @@ struct StartMenuView: View {
                     }
                     
                     VStack(spacing: 32){
-                        NavigationLink(destination: MainGameView(), isActive: $isMainGameLinkActive){
-                            ButtonView(clickHandler: {self.isMainGameLinkActive = true}, buttonTitle: "💥 Let’s Play")
-                        }
-                        
+//                        NavigationLink(destination: MainGameView(), isActive: $isMainGameLinkActive){
+//                            ButtonView(clickHandler: {self.isMainGameLinkActive = true}, buttonTitle: "💥 Let’s Play")
+//                        }
+                        ButtonView(clickHandler: {viewModel.pageView = "main"}, buttonTitle: "💥 Let’s Play")
+                        ButtonView(clickHandler: {viewModel.pageView = "leaderboard"}, type : "secondary", buttonTitle: "🏆 Leaderboard")
 //                        NavigationLink(destination: MainGameView(), isActive: $isInstructionLinkActive){
 //                            ButtonView(clickHandler: {self.isInstructionLinkActive = true}, type : "secondary", buttonTitle: "📖 Instruction")
 //                        }
-//                        NavigationLink(destination: MainGameView(), isActive: $isLeaderboardLinkActive){
+//                        NavigationLink(destination: LeaderBoardView().navigationBarBackButtonHidden(true), isActive: $isLeaderboardLinkActive){
 //                            ButtonView(clickHandler: {self.isLeaderboardLinkActive = true}, type : "secondary", buttonTitle: "🏆 Leaderboard")
 //                        }
                 

@@ -89,14 +89,16 @@ struct MainGameView: View {
                     Text("Tap the dice to roll")
                         .font(.custom("Teko-Regular", size: 20))
                         .foregroundColor(Color("primary-100"))
-                    Image("dice-\(viewModel.diceDisplay)")
-                        .resizable()
-                        .frame(width: 87, height: 87)
-                        .onTapGesture {
-                            withAnimation(.easeIn){
-                                viewModel.rollDice()
-                            }
-                        }
+//                    Image("dice-\(viewModel.diceDisplay)")
+//                        .resizable()
+//                        .frame(width: 87, height: 87)
+//                        .onTapGesture {
+//                            withAnimation(.easeIn){
+//                                viewModel.rollDice()
+//                            }
+//                        }
+//                    GifImage("tap")
+//                        .frame(width: 87, height: 87)
                         
                     
                 }
@@ -110,8 +112,8 @@ struct MainGameView: View {
             
         }
         .padding(0)
-            .navigationBarTitle("")
-            .navigationBarHidden(true)
+        .navigationBarTitle("")
+        .navigationBarHidden(true)
         
     }
 }

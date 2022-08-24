@@ -8,8 +8,18 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var viewModel: MainGameViewModel
+
     var body: some View{
-        StartMenuView()
+        
+        if (viewModel.pageView == "start"){
+            StartMenuView()
+        } else if (viewModel.pageView == "main"){
+            MainGameView()
+        } else if (viewModel.pageView == "leaderboard"){
+            LeaderBoardView()
+        }
+        
     }
     
 }

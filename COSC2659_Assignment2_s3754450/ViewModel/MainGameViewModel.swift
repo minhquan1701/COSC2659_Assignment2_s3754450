@@ -12,14 +12,14 @@ import SwiftUI
 
 class MainGameViewModel : ObservableObject{
     
-    
+    @Published var pageView = "start"
 
     @Published var offsetX = 0
     @Published var offsetY = 0
     @Published var  currentPosition = 0
     
     @Published var  diceRolled = 0
-    @Published var  diceDisplay = 3
+    @Published var  diceDisplay = 1
     
     @Published var  currPoint = 0
     
