@@ -18,6 +18,8 @@ struct ContentView: View {
             MainGameView()
         } else if (viewModel.pageView == "leaderboard"){
             LeaderBoardView()
+        } else if (viewModel.pageView == "instruction"){
+            InstructionView()
         }
         
     }

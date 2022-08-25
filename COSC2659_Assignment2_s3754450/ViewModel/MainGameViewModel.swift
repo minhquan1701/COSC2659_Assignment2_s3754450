@@ -59,14 +59,6 @@ class MainGameViewModel : ObservableObject{
         self.isWon = false
     }
     
-//    func initHighScroreList (highScoreVars : [Int]){
-//        for i in 0...4 {
-//            if (self.currPoint > highScoreVars[i]){
-//                highScoreVars[i] = self.currPoint
-//            }
-//        }
-//    }
-    
     
     func rollDice(){
        

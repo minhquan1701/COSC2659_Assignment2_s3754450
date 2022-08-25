@@ -10,7 +10,19 @@ import SwiftUI
 struct ModalView: View {
     @EnvironmentObject var viewModel: MainGameViewModel
     
-    
+    func updateHighScores (){
+        if (viewModel.currPoint > savedHighScore1){
+            savedHighScore1 = viewModel.currPoint
+        } else if (viewModel.currPoint > savedHighScore2){
+            savedHighScore2 = viewModel.currPoint
+        } else if (viewModel.currPoint > savedHighScore3){
+            savedHighScore3 = viewModel.currPoint
+        } else if (viewModel.currPoint > savedHighScore4){
+            savedHighScore4 = viewModel.currPoint
+        }else if (viewModel.currPoint > savedHighScore5){
+            savedHighScore5 = viewModel.currPoint
+        }
+    }
     
     //Persist high scores of the 5 latest turns
     @AppStorage("savedHighScore1") var savedHighScore1 : Int = 0
@@ -37,27 +49,16 @@ struct ModalView: View {
                     
                     HStack(spacing: 120){
                         Button("Replay", action: {
-                            
-                            if (viewModel.currPoint > savedHighScore1){
-                                savedHighScore1 = viewModel.currPoint
-                            } else if (viewModel.currPoint > savedHighScore2){
-                                savedHighScore2 = viewModel.currPoint
-                            } else if (viewModel.currPoint > savedHighScore3){
-                                savedHighScore3 = viewModel.currPoint
-                            } else if (viewModel.currPoint > savedHighScore4){
-                                savedHighScore4 = viewModel.currPoint
-                            }else if (viewModel.currPoint > savedHighScore5){
-                                savedHighScore5 = viewModel.currPoint
-                            }
-
+                            updateHighScores()
                             viewModel.initGame()
                         })
                         .font(.custom("Teko-Medium", size: 24))
                         .foregroundColor(Color("primary-500"))
                         
                         Button("Back to Menu", action: {
-                            viewModel.initGame()
+                            updateHighScores()
                             viewModel.pageView = "start"
+                            viewModel.initGame()
                         })
                         .font(.custom("Teko-Medium", size: 24))
                         .foregroundColor(Color("primary-800"))

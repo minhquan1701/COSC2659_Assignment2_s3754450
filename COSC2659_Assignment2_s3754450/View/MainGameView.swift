@@ -9,7 +9,8 @@ import SwiftUI
 
 struct MainGameView: View {
     @EnvironmentObject var viewModel: MainGameViewModel
-    
+    @State var scaleFator = 0.7
+    @State var opacityFactor = 0.8
     @AppStorage("savedHighScore1") var highestScore : Int = 0
     
     var body: some View {
@@ -33,36 +34,40 @@ struct MainGameView: View {
             }
             
             
-            VStack {
-           
-                    HStack  {
-                        HStack (spacing: 4) {
-                            Image(systemName:"star.circle")
-                                .font(.system(size: 24))
-                            Text("\(viewModel.currPoint)")
-                                .font(.custom("Teko-SemiBold" ,size: 24))
+            VStack (spacing: 0) {
+                HStack  {
+                    HStack (spacing: 4) {
+                        Image(systemName:"star.circle")
+                            .font(.system(size: 24))
+                        Text("\(viewModel.currPoint)")
+                            .font(.custom("Teko-SemiBold" ,size: 24))
 
-                        }
-                        
-                        Spacer()
-                        
-                        
-                        HStack (alignment: .center, spacing: 4) {
-                            Image("high-score")
-                                .resizable()
-                                .frame(width: 26, height: 22.4)
-                            Text(String(highestScore))
-                                .font(.custom("Teko-SemiBold" ,size: 24))
-                        }
-
-
-                            
                     }
-                    .padding(.horizontal, 16)
-                    .padding(.bottom, 32)
-                    .frame(maxWidth: 345)
-                    .foregroundColor(Color("primary-100"))
+                    
+                    Spacer()
+                    
+                    
 
+                    HStack (alignment: .center, spacing: 4) {
+                        Image("high-score")
+                            .resizable()
+                            .frame(width: 26, height: 22.4)
+                        Text(String(highestScore))
+                            .font(.custom("Teko-SemiBold" ,size: 24))
+                    }
+
+
+                        
+                }
+                .padding(.horizontal, 16)
+                .frame(maxWidth: 345)
+                .padding(.bottom, 10)
+                .foregroundColor(Color("primary-100"))
+                
+                
+                Image("dice-\(viewModel.diceDisplay)")
+                    .resizable()
+                    .frame(width: 64, height: 64)
                 
                 ZStack {
                         Image("map")
@@ -82,27 +87,34 @@ struct MainGameView: View {
                         }
                         
                     }
-               
                 .frame(width: 288, height: 504)
+                .padding(.top, 8)
             
-                VStack (spacing: 4) {
-                    Text("Tap the dice to roll")
-                        .font(.custom("Teko-Regular", size: 20))
+                ZStack () {
+                    Circle()
+                        .fill(Color("primary-100"))
+                        .frame(width: 50, height: 50)
+                        .scaleEffect(scaleFator)
+                        .opacity(Double(opacityFactor))
+                        .onAppear{
+                            withAnimation(Animation.linear(duration: 1.2).repeatForever(autoreverses: false)){
+                                self.opacityFactor = 0.1
+                                self.scaleFator = 1.5
+                            }
+                        }
+                    Text("Tap here to roll")
+                        .font(.custom("Teko-Regular", size: 24))
                         .foregroundColor(Color("primary-100"))
-//                    Image("dice-\(viewModel.diceDisplay)")
-//                        .resizable()
-//                        .frame(width: 87, height: 87)
-//                        .onTapGesture {
-//                            withAnimation(.easeIn){
-//                                viewModel.rollDice()
-//                            }
-//                        }
-//                    GifImage("tap")
-//                        .frame(width: 87, height: 87)
+
                         
-                    
+                        
                 }
-                .padding(.top, 32)
+                .padding(.top, 24)
+                .onTapGesture {
+                    withAnimation(.easeIn){
+                        viewModel.rollDice()
+                    }
+                }
             
             }
             if(viewModel.isWon){

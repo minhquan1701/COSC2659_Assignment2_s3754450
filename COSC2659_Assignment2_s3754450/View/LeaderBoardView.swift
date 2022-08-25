@@ -19,6 +19,7 @@ struct LeaderBoardView: View {
     var ButtonBack : some View {
         ButtonView(clickHandler: {viewModel.pageView = "start"}, type: "secondary", buttonTitle: "Back To Menu")
     }
+    
     var PlayBack : some View {
         ButtonView(clickHandler: {viewModel.pageView = "main"}, type: "primary", buttonTitle: "Play Now")
     }
@@ -36,7 +37,7 @@ struct LeaderBoardView: View {
                     LinearGradient(
                             gradient: Gradient(stops: [
                                 .init(color: .black, location: 0),
-                                .init(color: .black.opacity(0), location: 1)
+                                .init(color: .black.opacity(0.3), location: 1)
                             ]),
                             startPoint: .bottom,
                             endPoint: .top
