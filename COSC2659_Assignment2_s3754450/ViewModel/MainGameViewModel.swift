@@ -64,6 +64,7 @@ class MainGameViewModel : ObservableObject{
        
         var rollCount = 0
         Timer.scheduledTimer(withTimeInterval: 0.15, repeats: true){ t in
+            playSound(sound: "roll", type: "mp3")
             rollCount += 1
             self.diceDisplay = Int.random(in: 1...6)
             
@@ -80,6 +81,7 @@ class MainGameViewModel : ObservableObject{
             var count = 0
             Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true){ t in
                 if (self.currentPosition == 9){
+                    playSound(sound: "win", type: "wav")
                     self.updatePoint()
                     self.isWon = true
                     t.invalidate()
@@ -87,11 +89,14 @@ class MainGameViewModel : ObservableObject{
                 } else {
                     if (self.currentPosition < 3 || self.currentPosition >= 6 ){
                         self.offsetY += 72
+                        
                     } else{
                         self.offsetX += 72
+                        
                     }
                     count+=1
                     self.currentPosition += 1
+                    playSound(sound: "move", type: "wav")
                     if (count == self.diceRolled && self.currentPosition < 9){
                         self.updatePoint()
                     

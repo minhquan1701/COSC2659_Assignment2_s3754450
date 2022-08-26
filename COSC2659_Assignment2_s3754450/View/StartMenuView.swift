@@ -36,7 +36,20 @@ struct StartMenuView: View {
                 
                 
                 VStack (spacing: 24) {
-               
+                    
+                    VStack{
+                        HStack (alignment: .center, spacing: 4) {
+                            Image(systemName: "info.circle")
+                            Text("About")
+                                .font(.custom("Teko-Medium", size: 18))
+                            
+                        }
+                        .foregroundColor(Color.black.opacity(0.7))
+                            
+                    }
+                    .frame(maxWidth: 330, alignment: .trailing)
+                    Spacer()
+                    
                     VStack (spacing: -48) {
                         Text("JURASSIC")
                             .font(.custom("Teko-Bold", size: 48))
@@ -47,19 +60,34 @@ struct StartMenuView: View {
                     }
                     
                     VStack(spacing: 32){
-                        ButtonView(clickHandler: {viewModel.pageView = "main"}, buttonTitle: "💥 Let’s Play")
+                        ButtonView(clickHandler: {
+                            viewModel.pageView = "main"
+                            stopSound()
+                        }, buttonTitle: "💥 Let’s Play")
                         
-                        ButtonView(clickHandler: {viewModel.pageView = "instruction"}, type : "secondary", buttonTitle: "📖 Instruction")
+                        ButtonView(clickHandler: {
+                            viewModel.pageView = "instruction"
+                            stopSound()
+                        }, type : "secondary", buttonTitle: "📖 Instruction")
                         
-                        ButtonView(clickHandler: {viewModel.pageView = "leaderboard"}, type : "secondary", buttonTitle: "🏆 Leaderboard")
+                        ButtonView(clickHandler: {
+                            viewModel.pageView = "leaderboard"
+                            stopSound()
+                        }, type : "secondary", buttonTitle: "🏆 Leaderboard")
 
                     }
+                    
+                    Spacer()
 
                 }
 
             }
             .navigationBarTitle("")
             .navigationBarHidden(true)
+            .onAppear{
+                playSound(sound: "start", type: "mp3", isRepeat: true)
+            }
+            
         }
     }
 }

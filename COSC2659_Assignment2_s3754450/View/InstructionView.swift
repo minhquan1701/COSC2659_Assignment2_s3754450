@@ -62,11 +62,9 @@ struct InstructionView: View {
                                 }
                                 Text(" A block has an associated point that Dil can obtain when entering.")
                                     .foregroundColor(Color.white)
-                                
-                               
+
                             }
                             
-                                
                             VStack (alignment: .leading, spacing: 0) {
                                 HStack(alignment: .center, spacing: 12) {
                                     Text("Effect Blocks:")
@@ -82,10 +80,12 @@ struct InstructionView: View {
                                         
                                 }
                                 
-                                
                                 Text(" If Dil goes into these blocks, he’ll be either sent back to the starting point and reseted all points, or deducted 100 points.")
                                     .foregroundColor(Color.white)
                             }
+                            
+                            Text("If Dil goes to the Finish block, he will receive 500 points.")
+                                .foregroundColor(Color.white)
                         }
                         .font(.custom("Teko-Medium", size: 24))
                         .frame(maxWidth: 330)
@@ -100,6 +100,9 @@ struct InstructionView: View {
             }
 
 
+        }
+        .onAppear{
+            playSound(sound: "instruction", type: "mp3", isRepeat: true)
         }
     }
 }

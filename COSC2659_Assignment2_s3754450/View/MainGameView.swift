@@ -6,6 +6,9 @@
 //
 
 import SwiftUI
+import AVKit
+import AVFoundation
+
 
 struct MainGameView: View {
     @EnvironmentObject var viewModel: MainGameViewModel
@@ -113,6 +116,7 @@ struct MainGameView: View {
                 .onTapGesture {
                     withAnimation(.easeIn){
                         viewModel.rollDice()
+                        
                     }
                 }
             

@@ -83,6 +83,9 @@ struct LeaderBoardView: View {
 
 
         }
+        .onAppear{
+            playSound(sound: "leaderboard", type: "mp3", isRepeat: true)
+        }
     }
 }
 
