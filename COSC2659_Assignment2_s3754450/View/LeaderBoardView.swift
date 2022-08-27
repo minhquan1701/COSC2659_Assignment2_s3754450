@@ -5,6 +5,18 @@
 //  Created by Quan, Hoang Minh on 23/08/2022.
 //
 
+/*
+  RMIT University Vietnam
+  Course: COSC2659 iOS Development
+  Semester: 2022B
+  Assessment: Assignment 2
+  Author: Hoang Minh Quan
+  ID: s3754450
+  Created  date: 23/8/2022
+  Last modified: 27/8/2022
+  Acknowledgement:
+*/
+
 import SwiftUI
 
 struct LeaderBoardView: View {
@@ -17,11 +29,17 @@ struct LeaderBoardView: View {
     @AppStorage("savedHighScore5") var savedHighScore5 : Int = 0
     
     var ButtonBack : some View {
-        ButtonView(clickHandler: {viewModel.pageView = "start"}, type: "secondary", buttonTitle: "Back To Menu")
+        ButtonView(clickHandler: {
+            viewModel.pageView = "start"
+            stopSound()
+        }, type: "secondary", buttonTitle: "Back To Menu")
     }
     
     var PlayBack : some View {
-        ButtonView(clickHandler: {viewModel.pageView = "main"}, type: "primary", buttonTitle: "Play Now")
+        ButtonView(clickHandler: {
+            viewModel.pageView = "main"
+            stopSound()
+        }, type: "primary", buttonTitle: "Play Now")
     }
     
     
@@ -84,7 +102,13 @@ struct LeaderBoardView: View {
 
         }
         .onAppear{
-            playSound(sound: "leaderboard", type: "mp3", isRepeat: true)
+            
+            if (viewModel.isMuted){
+                stopSound()
+            } else {
+                playSound(sound: "leaderboard", type: "mp3", isRepeat: true)
+            }
+            
         }
     }
 }

@@ -3,7 +3,18 @@
 //  COSC2659_Assignment2_s3754450
 //
 //  Created by Quan, Hoang Minh on 26/08/2022.
-// ref :Tom Huynh
+/*
+  RMIT University Vietnam
+  Course: COSC2659 iOS Development
+  Semester: 2022B
+  Assessment: Assignment 2
+  Author: Hoang Minh Quan
+  ID: s3754450
+  Created  date: 20/8/2022
+  Last modified: 27/8/2022
+  Acknowledgement: The code for playing sound is taken inspiration from Mr. Tom Huynh, Lecturer of IOS Development course in RMIT university.
+*/
+
 import Foundation
 import AVFoundation
 

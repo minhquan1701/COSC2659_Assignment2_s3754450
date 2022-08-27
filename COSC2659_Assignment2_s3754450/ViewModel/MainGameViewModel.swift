@@ -5,6 +5,18 @@
 //  Created by Quan, Hoang Minh on 20/08/2022.
 //
 
+/*
+  RMIT University Vietnam
+  Course: COSC2659 iOS Development
+  Semester: 2022B
+  Assessment: Assignment 2
+  Author: Hoang Minh Quan
+  ID: s3754450
+  Created  date: 20/8/2022
+  Last modified: 27/8/2022
+  Acknowledgement:
+*/
+
 import Foundation
 import SwiftUI
 
@@ -13,6 +25,8 @@ import SwiftUI
 class MainGameViewModel : ObservableObject{
     
     @Published var pageView = "start"
+    
+    @Published var isMuted = false
 
     @Published var offsetX = 0
     @Published var offsetY = 0
@@ -57,11 +71,11 @@ class MainGameViewModel : ObservableObject{
         self.diceRolled = 0
         self.currPoint = 0
         self.isWon = false
+        
     }
     
     
     func rollDice(){
-       
         var rollCount = 0
         Timer.scheduledTimer(withTimeInterval: 0.15, repeats: true){ t in
             playSound(sound: "roll", type: "mp3")
@@ -72,7 +86,6 @@ class MainGameViewModel : ObservableObject{
                 self.diceRolled = self.diceDisplay
                 t.invalidate()
             }
-            
             
         }
         
@@ -103,8 +116,6 @@ class MainGameViewModel : ObservableObject{
                         t.invalidate()
                     }
                 }
-                
-                
                 
             }
          })

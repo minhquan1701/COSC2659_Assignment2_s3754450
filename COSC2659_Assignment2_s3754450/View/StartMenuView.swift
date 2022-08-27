@@ -5,14 +5,29 @@
 //  Created by Quan, Hoang Minh on 22/08/2022.
 //
 
+/*
+  RMIT University Vietnam
+  Course: COSC2659 iOS Development
+  Semester: 2022B
+  Assessment: Assignment 2
+  Author: Hoang Minh Quan
+  ID: s3754450
+  Created  date: 22/8/2022
+  Last modified: 27/8/2022
+  Acknowledgement:
+*/
+
 import SwiftUI
 
 struct StartMenuView: View {
     @EnvironmentObject var viewModel: MainGameViewModel
     
-    @State var isMainGameLinkActive = false
-    @State var isInstructionLinkActive = false
-    @State var isLeaderboardLinkActive = false
+    @State private var showingAbout = false
+    
+    
+    func toggleSound(){
+        viewModel.isMuted.toggle()
+    }
     
     var body: some View {
         NavigationView {
@@ -37,17 +52,36 @@ struct StartMenuView: View {
                 
                 VStack (spacing: 24) {
                     
-                    VStack{
+                    HStack{
+                        
+                        Image(systemName: viewModel.isMuted ? "speaker" : "speaker.slash")
+                            .font(.system(size: 24))
+                            .onTapGesture {
+                                viewModel.isMuted.toggle()
+                                if (viewModel.isMuted == true){
+                                    stopSound()
+                                }else{
+                                    playSound(sound: "start", type: "mp3", isRepeat: true)
+                                }
+                            }
+
+                        Spacer()
                         HStack (alignment: .center, spacing: 4) {
                             Image(systemName: "info.circle")
+                                .font(.system(size: 20))
                             Text("About")
                                 .font(.custom("Teko-Medium", size: 18))
                             
                         }
-                        .foregroundColor(Color.black.opacity(0.7))
+                        
+                        .onTapGesture{
+                            self.showingAbout.toggle()
+                        }
                             
                     }
-                    .frame(maxWidth: 330, alignment: .trailing)
+                    .foregroundColor(Color.black.opacity(0.7))
+                    .frame(maxWidth: 330)
+                    
                     Spacer()
                     
                     VStack (spacing: -48) {
@@ -82,10 +116,19 @@ struct StartMenuView: View {
                 }
 
             }
+            .sheet(isPresented: $showingAbout) {
+                AboutView()
+            }
             .navigationBarTitle("")
             .navigationBarHidden(true)
+           
             .onAppear{
-                playSound(sound: "start", type: "mp3", isRepeat: true)
+                if (viewModel.isMuted){
+                    stopSound()
+                } else {
+                    playSound(sound: "start", type: "mp3", isRepeat: true)
+                }
+                
             }
             
         }

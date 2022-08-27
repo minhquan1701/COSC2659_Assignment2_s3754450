@@ -5,13 +5,28 @@
 //  Created by Quan, Hoang Minh on 25/08/2022.
 //
 
+/*
+  RMIT University Vietnam
+  Course: COSC2659 iOS Development
+  Semester: 2022B
+  Assessment: Assignment 2
+  Author: Hoang Minh Quan
+  ID: s3754450
+  Created  date: 25/8/2022
+  Last modified: 27/8/2022
+  Acknowledgement:
+*/
+
 import SwiftUI
 
 struct InstructionView: View {
     @EnvironmentObject var viewModel: MainGameViewModel
 
     var ButtonBack : some View {
-        ButtonView(clickHandler: {viewModel.pageView = "start"}, type: "secondary", buttonTitle: "Back To Menu")
+        ButtonView(clickHandler: {
+            viewModel.pageView = "start"
+            stopSound()
+        }, type: "secondary", buttonTitle: "Back To Menu")
     }
     var body: some View {
         NavigationView {
@@ -25,7 +40,7 @@ struct InstructionView: View {
                     LinearGradient(
                             gradient: Gradient(stops: [
                                 .init(color: .black, location: 0),
-                                .init(color: .black.opacity(0.3), location: 1)
+                                .init(color: .black.opacity(0.4), location: 1)
                             ]),
                             startPoint: .bottom,
                             endPoint: .top
@@ -102,7 +117,14 @@ struct InstructionView: View {
 
         }
         .onAppear{
-            playSound(sound: "instruction", type: "mp3", isRepeat: true)
+          
+            
+            if (viewModel.isMuted == true){
+                stopSound()
+            } else {
+                playSound(sound: "instruction", type: "mp3", isRepeat: true)
+            }
+            
         }
     }
 }

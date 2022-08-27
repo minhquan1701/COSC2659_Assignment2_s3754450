@@ -5,6 +5,18 @@
 //  Created by Quan, Hoang Minh on 22/08/2022.
 //
 
+/*
+  RMIT University Vietnam
+  Course: COSC2659 iOS Development
+  Semester: 2022B
+  Assessment: Assignment 2
+  Author: Hoang Minh Quan
+  ID: s3754450
+  Created  date: 20/8/2022
+  Last modified: 27/8/2022
+  Acknowledgement:
+*/
+
 import SwiftUI
 import AVKit
 import AVFoundation
@@ -82,7 +94,7 @@ struct MainGameView: View {
                             Image("dinosaur")
                                 .resizable()
                                 .frame(width: 72, height: 72)
-                                .position(x: geo.frame(in: .local).minX + 36 + CGFloat(viewModel.offsetX), y: geo.frame(in: .local).minY + 36 + CGFloat( viewModel.offsetY))
+                                .position(x: geo.frame(in: .local).minX + 36 + CGFloat(viewModel.offsetX), y: geo.frame(in: .local).minY + 36 + CGFloat(viewModel.offsetY))
                                 .animation(.easeInOut, value: viewModel.offsetX)
                                 .animation(.easeInOut, value: viewModel.offsetY)
                                 

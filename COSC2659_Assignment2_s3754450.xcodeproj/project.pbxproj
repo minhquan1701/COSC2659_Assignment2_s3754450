@@ -11,7 +11,7 @@
 		475E4C2628B3C00800CEA8A8 /* MainGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475E4C2528B3C00800CEA8A8 /* MainGameView.swift */; };
 		478025C628B7A6FA0000A581 /* InstructionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478025C528B7A6FA0000A581 /* InstructionView.swift */; };
 		478025C828B7A7300000A581 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478025C728B7A7300000A581 /* ButtonView.swift */; };
-		478025CA28B7B5C30000A581 /* AboutModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478025C928B7B5C30000A581 /* AboutModalView.swift */; };
+		478025CA28B7B5C30000A581 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478025C928B7B5C30000A581 /* AboutView.swift */; };
 		47A471A828B0BA1B00540AFE /* ModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A471A728B0BA1B00540AFE /* ModalView.swift */; };
 		47A471B028B0DCBB00540AFE /* Teko-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 47A471AA28B0DCBB00540AFE /* Teko-Bold.ttf */; };
 		47A471B128B0DCBB00540AFE /* Teko-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 47A471AB28B0DCBB00540AFE /* Teko-Medium.ttf */; };
@@ -60,7 +60,7 @@
 		475E4C2528B3C00800CEA8A8 /* MainGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainGameView.swift; sourceTree = "<group>"; };
 		478025C528B7A6FA0000A581 /* InstructionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionView.swift; sourceTree = "<group>"; };
 		478025C728B7A7300000A581 /* ButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
-		478025C928B7B5C30000A581 /* AboutModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutModalView.swift; sourceTree = "<group>"; };
+		478025C928B7B5C30000A581 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		47A471A728B0BA1B00540AFE /* ModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalView.swift; sourceTree = "<group>"; };
 		47A471AA28B0DCBB00540AFE /* Teko-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Teko-Bold.ttf"; sourceTree = "<group>"; };
 		47A471AB28B0DCBB00540AFE /* Teko-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Teko-Medium.ttf"; sourceTree = "<group>"; };
@@ -132,7 +132,7 @@
 				475E4C2528B3C00800CEA8A8 /* MainGameView.swift */,
 				47CD515428B513C200DF8F67 /* LeaderBoardView.swift */,
 				478025C528B7A6FA0000A581 /* InstructionView.swift */,
-				478025C928B7B5C30000A581 /* AboutModalView.swift */,
+				478025C928B7B5C30000A581 /* AboutView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -404,7 +404,7 @@
 				47AD32FC289E17E900AD1A40 /* COSC2659_Assignment2_s3754450App.swift in Sources */,
 				478025C628B7A6FA0000A581 /* InstructionView.swift in Sources */,
 				475E4C2628B3C00800CEA8A8 /* MainGameView.swift in Sources */,
-				478025CA28B7B5C30000A581 /* AboutModalView.swift in Sources */,
+				478025CA28B7B5C30000A581 /* AboutView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
