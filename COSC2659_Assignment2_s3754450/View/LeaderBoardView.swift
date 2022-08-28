@@ -32,6 +32,7 @@ struct LeaderBoardView: View {
         ButtonView(clickHandler: {
             viewModel.pageView = "start"
             stopSound()
+            
         }, type: "secondary", buttonTitle: "Back To Menu")
     }
     
@@ -46,6 +47,8 @@ struct LeaderBoardView: View {
     var body: some View {
         NavigationView {
             ZStack {
+                
+                // Background image
                 ZStack {
                     Image("leaderboard-bg")
                         .resizable()
@@ -63,33 +66,39 @@ struct LeaderBoardView: View {
                     .ignoresSafeArea()
                 }
                 
-                
+                // Content
                 VStack (spacing: 0) {
                
                     Text("LEADERBOARD")
                         .font(.custom("Teko-Bold", size: 48))
                         .foregroundColor(Color.white)
                     
+                    // High scores
                     VStack{
                         Text(String(savedHighScore1))
                             .font(.custom("Teko-Bold", size: 32))
                             .foregroundColor(Color("primary-300"))
+                        
                         Text(String(savedHighScore2))
                             .font(.custom("Teko-Bold", size: 32))
                             .foregroundColor(Color("primary-300"))
+                        
                         Text(String(savedHighScore3))
                             .font(.custom("Teko-Bold", size: 32))
                             .foregroundColor(Color("primary-300"))
+                        
                         Text(String(savedHighScore4))
                             .font(.custom("Teko-Bold", size: 32))
                             .foregroundColor(Color("primary-300"))
+                        
                         Text(String(savedHighScore5))
                             .font(.custom("Teko-Bold", size: 32))
                             .foregroundColor(Color("primary-300"))
                         
                     }
                     .padding(.bottom, 64)
-                        
+                    
+                    // Button list
                     VStack (spacing: 32){
                         PlayBack
                         ButtonBack
@@ -101,14 +110,14 @@ struct LeaderBoardView: View {
 
 
         }
-        .onAppear{
-            
+        .onAppear {
             if (viewModel.isMuted){
                 stopSound()
+                
             } else {
                 playSound(sound: "leaderboard", type: "mp3", isRepeat: true)
+                
             }
-            
         }
     }
 }
@@ -116,5 +125,6 @@ struct LeaderBoardView: View {
 struct LeaderBoardView_Previews: PreviewProvider {
     static var previews: some View {
         LeaderBoardView()
+            .environmentObject(MainGameViewModel())
     }
 }

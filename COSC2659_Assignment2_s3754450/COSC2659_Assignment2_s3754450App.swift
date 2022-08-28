@@ -15,6 +15,7 @@
   Created  date: 06/8/2022
   Last modified: 27/8/2022
   Acknowledgement:
+    StateObject: https://www.hackingwithswift.com/quick-start/swiftui/what-is-the-stateobject-property-wrapper
 */
 
 import SwiftUI

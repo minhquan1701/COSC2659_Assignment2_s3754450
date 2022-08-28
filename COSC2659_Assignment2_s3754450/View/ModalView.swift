@@ -15,6 +15,8 @@
   Created  date: 20/8/2022
   Last modified: 27/8/2022
   Acknowledgement:
+    AppStorage concept: https://www.hackingwithswift.com/quick-start/swiftui/what-is-the-appstorage-property-wrapper
+ 
 */
 
 import SwiftUI
@@ -46,19 +48,22 @@ struct ModalView: View {
     
     var body: some View {
             ZStack {
+                
+                // Modal content
                 VStack{
-                    
                     Image("victory")
                         .resizable()
                         .frame(width: 80, height: 80)
+                    
                     Text("You Won!")
                         .font(.custom("Teko-Bold",size: 40))
                         .foregroundColor(Color("primary-500"))
+                    
                     Text("Phew! That's was close. You have saved the next generation of dinasour 🤗")
                         .font(.custom("Teko-Regular",size: 24))
                         .padding(.horizontal, 16)
-                        
                     
+                    // Button links
                     HStack(spacing: 120){
                         Button("Replay", action: {
                             updateHighScores()
@@ -74,13 +79,16 @@ struct ModalView: View {
                         })
                         .font(.custom("Teko-Medium", size: 24))
                         .foregroundColor(Color("primary-800"))
+                        
                     }
                     .padding(.top, 10)
+                    
                 }
                 .padding(.vertical, 28)
                 .frame(maxWidth: 350)
                 .background(Color("primary-100"))
-            .cornerRadius(10)
+                .cornerRadius(10)
+                
             }
             .frame(maxWidth:.infinity, maxHeight: .infinity)
             .background(Color.black.opacity(0.8))

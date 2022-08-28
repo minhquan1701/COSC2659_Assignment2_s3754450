@@ -33,9 +33,9 @@ struct AboutView: View {
             
             
             VStack (alignment: .leading, spacing: 12) {
-                Text("This game was designed with 🔥 in Figma and developed with 💖 in SwiftUI.")
+                Text("This game was designed with 🔥 in Figma and developed with 💖 in SwiftUI by Hoang Minh Quan - s3754450.")
                 Text("Game assets sources: Freepik, Mixkit, and Flat Icon.")
-                Text("For game/web design side projects, feel free to contact me at your convinience via:")
+                Text("For app/web design side projects, feel free to contact me at your convenience via:")
             }
             .font(.custom("Teko-Regular",size: 24))
             .padding(.bottom, 1)
@@ -50,6 +50,7 @@ struct AboutView: View {
 
             ButtonView(clickHandler: {
                 dismiss()
+                
             }, type: "secondary", buttonTitle: "Back to Menu")
             .font(.custom("Teko-Medium", size: 24))
             .foregroundColor(Color("primary-800"))
@@ -57,10 +58,6 @@ struct AboutView: View {
         }
         .padding(.horizontal, 16)
 
-        
-        
-           
-        
     }
 }
 

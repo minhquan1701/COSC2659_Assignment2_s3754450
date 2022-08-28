@@ -13,8 +13,10 @@
   Author: Hoang Minh Quan
   ID: s3754450
   Created  date: 20/8/2022
-  Last modified: 27/8/2022
+  Last modified: 28/8/2022
   Acknowledgement:
+    GeometryReader concept: https://www.youtube.com/watch?v=lMteVjlOIbM
+    
 */
 
 import SwiftUI
@@ -30,6 +32,8 @@ struct MainGameView: View {
     
     var body: some View {
         ZStack {
+            
+            // Background image
             ZStack {
                 Image("main-game-bg")
                     .resizable()
@@ -37,31 +41,30 @@ struct MainGameView: View {
                 .ignoresSafeArea()
                 
                 LinearGradient(
-                        gradient: Gradient(stops: [
-                            .init(color: .black, location: 0),
-                            .init(color: .black.opacity(0), location: 1)
-                        ]),
-                        startPoint: .bottom,
-                        endPoint: .top
+                    gradient: Gradient(stops: [
+                        .init(color: .black, location: 0),
+                        .init(color: .black.opacity(0), location: 1)
+                    ]),
+                    startPoint: .bottom,
+                    endPoint: .top
                 )
                 .edgesIgnoringSafeArea(.all)
                 
             }
             
-            
+            // Main components
             VStack (spacing: 0) {
-                HStack  {
+                
+                // Score display
+                HStack {
                     HStack (spacing: 4) {
                         Image(systemName:"star.circle")
                             .font(.system(size: 24))
                         Text("\(viewModel.currPoint)")
                             .font(.custom("Teko-SemiBold" ,size: 24))
-
                     }
                     
                     Spacer()
-                    
-                    
 
                     HStack (alignment: .center, spacing: 4) {
                         Image("high-score")
@@ -70,8 +73,6 @@ struct MainGameView: View {
                         Text(String(highestScore))
                             .font(.custom("Teko-SemiBold" ,size: 24))
                     }
-
-
                         
                 }
                 .padding(.horizontal, 16)
@@ -79,17 +80,18 @@ struct MainGameView: View {
                 .padding(.bottom, 10)
                 .foregroundColor(Color("primary-100"))
                 
-                
+                // Dice display
                 Image("dice-\(viewModel.diceDisplay)")
                     .resizable()
                     .frame(width: 64, height: 64)
                 
+                // Board game map
                 ZStack {
                         Image("map")
                         .resizable()
                         .scaledToFill()
                            
-                        // Peek the location of the next tile to turn.
+                        // The chacacter with its location managed by GeometryReader
                         GeometryReader{ geo in
                             Image("dinosaur")
                                 .resizable()
@@ -97,14 +99,13 @@ struct MainGameView: View {
                                 .position(x: geo.frame(in: .local).minX + 36 + CGFloat(viewModel.offsetX), y: geo.frame(in: .local).minY + 36 + CGFloat(viewModel.offsetY))
                                 .animation(.easeInOut, value: viewModel.offsetX)
                                 .animation(.easeInOut, value: viewModel.offsetY)
-                                
-                                
+   
                         }
-                        
                     }
                 .frame(width: 288, height: 504)
                 .padding(.top, 8)
-            
+                
+                // Text button to roll the dice
                 ZStack () {
                     Circle()
                         .fill(Color("primary-100"))
@@ -120,8 +121,6 @@ struct MainGameView: View {
                     Text("Tap here to roll")
                         .font(.custom("Teko-Regular", size: 24))
                         .foregroundColor(Color("primary-100"))
-
-                        
                         
                 }
                 .padding(.top, 24)
@@ -133,6 +132,8 @@ struct MainGameView: View {
                 }
             
             }
+            
+            // Winning message modal
             if(viewModel.isWon){
                 ModalView()
             }

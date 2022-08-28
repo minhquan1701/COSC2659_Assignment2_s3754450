@@ -26,7 +26,7 @@ func playSound(sound: String, type: String, isRepeat: Bool = false) {
     if let path = Bundle.main.path(forResource:sound, ofType: type){
         do {
             audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: path))
-            audioPlayer?.numberOfLoops = isRepeat ? -1 : 0
+            audioPlayer?.numberOfLoops = isRepeat ? -1 : 0 // -1 for repeating infinitely
             audioPlayer?.play()
         } catch {
             print("ERROR: Cannot play the sound file")

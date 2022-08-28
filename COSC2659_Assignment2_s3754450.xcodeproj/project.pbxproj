@@ -19,7 +19,6 @@
 		47A471B328B0DCBB00540AFE /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = 47A471AD28B0DCBB00540AFE /* OFL.txt */; };
 		47A471B428B0DCBB00540AFE /* Teko-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 47A471AE28B0DCBB00540AFE /* Teko-Regular.ttf */; };
 		47A471B528B0DCBB00540AFE /* Teko-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 47A471AF28B0DCBB00540AFE /* Teko-Light.ttf */; };
-		47A471B928B0E64300540AFE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A471B828B0E64300540AFE /* User.swift */; };
 		47AD32FC289E17E900AD1A40 /* COSC2659_Assignment2_s3754450App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AD32FB289E17E900AD1A40 /* COSC2659_Assignment2_s3754450App.swift */; };
 		47AD32FE289E17E900AD1A40 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AD32FD289E17E900AD1A40 /* ContentView.swift */; };
 		47AD3300289E17EA00AD1A40 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47AD32FF289E17EA00AD1A40 /* Assets.xcassets */; };
@@ -69,7 +68,6 @@
 		47A471AE28B0DCBB00540AFE /* Teko-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Teko-Regular.ttf"; sourceTree = "<group>"; };
 		47A471AF28B0DCBB00540AFE /* Teko-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Teko-Light.ttf"; sourceTree = "<group>"; };
 		47A471B628B0DEA200540AFE /* COSC2659-Assignment2-s3754450-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "COSC2659-Assignment2-s3754450-Info.plist"; sourceTree = SOURCE_ROOT; };
-		47A471B828B0E64300540AFE /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		47AD32F8289E17E900AD1A40 /* COSC2659_Assignment2_s3754450.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = COSC2659_Assignment2_s3754450.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		47AD32FB289E17E900AD1A40 /* COSC2659_Assignment2_s3754450App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = COSC2659_Assignment2_s3754450App.swift; sourceTree = "<group>"; };
 		47AD32FD289E17E900AD1A40 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -150,14 +148,6 @@
 			path = Teko;
 			sourceTree = "<group>";
 		};
-		47A471B728B0E61600540AFE /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				47A471B828B0E64300540AFE /* User.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		47AD32EF289E17E900AD1A40 = {
 			isa = PBXGroup;
 			children = (
@@ -189,7 +179,6 @@
 				47F39C6528B8F8D1003055CC /* Sounds */,
 				47F39C6228B8F7AE003055CC /* Helpers */,
 				475E4C2228B3B65000CEA8A8 /* Components */,
-				47A471B728B0E61600540AFE /* Model */,
 				47A471A628B0B9F500540AFE /* View */,
 				47AD32FF289E17EA00AD1A40 /* Assets.xcassets */,
 				47AD3301289E17EA00AD1A40 /* Preview Content */,
@@ -400,7 +389,6 @@
 				47A471A828B0BA1B00540AFE /* ModalView.swift in Sources */,
 				47CD515528B513C200DF8F67 /* LeaderBoardView.swift in Sources */,
 				478025C828B7A7300000A581 /* ButtonView.swift in Sources */,
-				47A471B928B0E64300540AFE /* User.swift in Sources */,
 				47AD32FC289E17E900AD1A40 /* COSC2659_Assignment2_s3754450App.swift in Sources */,
 				478025C628B7A6FA0000A581 /* InstructionView.swift in Sources */,
 				475E4C2628B3C00800CEA8A8 /* MainGameView.swift in Sources */,
