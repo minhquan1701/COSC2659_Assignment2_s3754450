@@ -7,7 +7,7 @@ Author: Hoang Minh Quan
 
 
 ## Introduction
-This is a three-week asignment project for the course IOS Application Development of RMIT's Software Enginneering program. The requirement was to build a board game using the SwiftUI framework and XCode. Personally, indie games have always been something that I would love to try while learning software development, since the idea of building my own game from scratch is very fascinating to me. Therefore, I had decided to design and develope an RPG indie board game whose mechanism is inspired from the well-known board game, Ludo. 
+This is a three-week asignment project for the course IOS Application Development of RMIT's Software Enginneering program. The requirement was to build a board/casio/card game using the SwiftUI framework and XCode. Personally, indie games have always been something that I would love to try while learning software development, since the idea of building my own game from scratch is very fascinating to me. Therefore, I had decided to design and develope an RPG indie board game whose mechanism is inspired from the well-known board game, Ludo. 
 
 I sincerely thank Mr. Tom Huynh, Lecturer of the course for giving me such amazing opportunity to freely bring my creative idea into life ❤.
 
